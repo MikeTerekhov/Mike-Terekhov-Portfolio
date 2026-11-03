@@ -1,35 +1,30 @@
 "use client"; // This is a client component 👈🏽
 
-import Head from 'next/head';
 import Image from 'next/image';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
-import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
+import design from "@/public/images/design.png";
+import code from "@/public/images/code.png";
+import consulting from "@/public/images/consulting.png";
 import { useState } from "react";
-import Navbar from '@/app/Navbar';
-import '@/app/workPage.css';
-import '../app/globals.css';
-import kart from "../public/racekart.png";
-import paper from "../public/paper.jpg";
-import kart2 from "../public/racekart2.png";
-import goose from "../public/goose.png";
-import mongo from "../public/mongo.png";
 
-import home_screen from "../public/home_screen.png";
-import mongo_website from "../public/mongo_website.png";
-import nlp_screen from "../public/nlp_screen.png";
-import sentiment from "../public/sentiment.png";
-import document_list_page from "../public/document_list_page.png";
-import doc_screen from "../public/doc_screen.png";
+
+import paper from "@/public/images/paper.jpg";
+import goose from "@/public/images/goose.png";
+import mongo from "@/public/images/mongo.png";
+
+import home_screen from "@/public/images/home_screen.png";
+import mongo_website from "@/public/images/mongo_website.png";
+import nlp_screen from "@/public/images/nlp_screen.png";
+import sentiment from "@/public/images/sentiment.png";
+import document_list_page from "@/public/images/document_list_page.png";
+import doc_screen from "@/public/images/doc_screen.png";
 import {useEffect } from 'react';
 
 function DocRead() {
   return (
     <>
-    <Navbar/>
+
 
     <div className='bg-gray-900 px-10 md:px-20 lg:px-40'>
            <div>

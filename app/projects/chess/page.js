@@ -1,32 +1,28 @@
-import Head from 'next/head';
+"use client";
+
 import Image from 'next/image';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
-import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
+import design from "@/public/images/design.png";
+import code from "@/public/images/code.png";
+import consulting from "@/public/images/consulting.png";
 import { useState } from "react";
-import Navbar from '@/app/Navbar';
-import '@/app/workPage.css';
-import kart from "../public/racekart.png";
-import paper from "../public/paper.jpg";
-import kart2 from "../public/racekart2.png";
-import goose from "../public/goose.png";
-import chess2 from "../public/chess2.png";
 
-import home_screen2 from "../public/home_screen2.png";
-import mid_game from "../public/mid_game.png";
-import game_over from "../public/game_over.png";
+import paper from "@/public/images/paper.jpg";
+import goose from "@/public/images/goose.png";
+import chess2 from "@/public/images/chess2.png";
+
+import home_screen2 from "@/public/images/home_screen2.png";
+import mid_game from "@/public/images/mid_game.png";
+import game_over from "@/public/images/game_over.png";
 import {useEffect } from 'react';
 
-import '../app/globals.css'
 
 function ChessPage() {
 
   return (
     <>
-    <Navbar/>
+
 
       <div className='bg-gray-900 px-10 md:px-20 lg:px-40'>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
@@ -55,7 +51,7 @@ function ChessPage() {
                                 height: '100vh' // Adjust or remove to fit the entire viewport or parent
                             }}>
                             <video width="400" height="400" controls>
-                                <source src="/chessmp4.mp4" type="video/mp4" />
+                                <source src="/videos/chessmp4.mp4" type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                             </div>

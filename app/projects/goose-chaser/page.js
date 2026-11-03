@@ -1,40 +1,35 @@
 "use client"; // This is a client component 👈🏽
 
-import Head from 'next/head';
 import Image from 'next/image';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
-import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
+import design from "@/public/images/design.png";
+import code from "@/public/images/code.png";
+import consulting from "@/public/images/consulting.png";
 import { useState } from "react";
-import Navbar from '@/app/Navbar';
-import '@/app/workPage.css';
-import '../app/globals.css';
-import kart from "../public/racekart.png";
-import paper from "../public/paper.jpg";
-import kart2 from "../public/racekart2.png";
-import goose from "../public/goose.png";
-import cnn1 from "../public/cnn1.png";
-import cnn2 from "../public/cnn2.png";
-import cnn3 from "../public/cnn3.png";
-import cnn_test from "../public/cnn_test.png";
-import data from "../public/data.png"
 
-import cnn_results from "../public/cnn_results.png";
-import yolo_models from "../public/yolo_models.png";
-import yolo_example from "../public/yolo_example.png";
-import pic_example from "../public/pic_example.png";
-import differences from "../public/differences.png"
-import toy_example from "../public/toy_example.png";
-import drone from "../public/drone.png";
+
+import paper from "@/public/images/paper.jpg";
+import goose from "@/public/images/goose.png";
+import cnn1 from "@/public/images/cnn1.png";
+import cnn2 from "@/public/images/cnn2.png";
+import cnn3 from "@/public/images/cnn3.png";
+import cnn_test from "@/public/images/cnn_test.png";
+import data from "@/public/images/data.png"
+
+import cnn_results from "@/public/images/cnn_results.png";
+import yolo_models from "@/public/images/yolo_models.png";
+import yolo_example from "@/public/images/yolo_example.png";
+import pic_example from "@/public/images/pic_example.png";
+import differences from "@/public/images/differences.png"
+import toy_example from "@/public/images/toy_example.png";
+import drone from "@/public/images/drone.png";
 import {useEffect } from 'react';
 
 function GoosePage() {
   return (
     <>
-    <Navbar/>
+
 
     <div className='bg-gray-900 px-10 md:px-20 lg:px-40'>
            <div>

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function SportsPage() {
+export default function BooksPage() {
   const [team, setTeam] = useState(null);
 
   useEffect(() => {

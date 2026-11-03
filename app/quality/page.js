@@ -1,12 +1,11 @@
 "use client";
 
-import Navbar from '../Navbar';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import plane from "../../public/plane2.png";
-import ge1 from "../../public/ge1.png";
-import ge2 from "../../public/ge2.png";
-import ge3 from "../../public/ge3.png";
+import plane from "@/public/images/plane2.png";
+import ge1 from "@/public/images/ge1.png";
+import ge2 from "@/public/images/ge2.png";
+import ge3 from "@/public/images/ge3.png";
 
 export default function QualityPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,7 +24,7 @@ export default function QualityPage() {
   if (isLoading) {
     return (
       <>
-        <Navbar />
+
         <div className={darkMode ? "dark" : ""}>
           <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen flex items-center justify-center'>
             <div className="text-4xl font-['0xProtoNerdFont'] dark:text-white">Loading...</div>
@@ -37,7 +36,7 @@ export default function QualityPage() {
 
   return (
     <>
-      <Navbar />
+
       <div className={darkMode ? "dark" : ""}>
         <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen'>
           <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>

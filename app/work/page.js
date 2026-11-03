@@ -1,13 +1,12 @@
 "use client";
 
-import Navbar from '../Navbar';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import plane from "../../public/plane2.png";
-import ge1 from "../../public/ge1.png";
-import ge2 from "../../public/ge2.png";
-import ge3 from "../../public/ge3.png";
+import plane from "@/public/images/plane2.png";
+import ge1 from "@/public/images/ge1.png";
+import ge2 from "@/public/images/ge2.png";
+import ge3 from "@/public/images/ge3.png";
 
 export default function WorkPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +25,7 @@ export default function WorkPage() {
   if (isLoading) {
     return (
       <>
-        <Navbar />
+
         <div className={darkMode ? "dark" : ""}>
           <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen flex items-center justify-center'>
             <div className="text-4xl font-['0xProtoNerdFont'] dark:text-white">Loading...</div>
@@ -38,7 +37,7 @@ export default function WorkPage() {
 
   return (
     <>
-      <Navbar />
+
       <div className={darkMode ? "dark" : ""}>
         <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen'>
           <h1 className='text-4xl py-10 text-center font-["0xProtoNerdFont"] dark:text-white'>Work Experience</h1>

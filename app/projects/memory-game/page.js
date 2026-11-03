@@ -2,21 +2,19 @@
 import Image from 'next/image';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { useState } from "react";
-import Navbar from '@/app/Navbar';
-import '@/app/workPage.css';
-import '../app/globals.css';
-import memory from "../public/memory.png";
-import Head from 'next/head';
-import start from "../public/emoji/start.png";
-import initial from "../public/emoji/initial.png";
-import not from "../public/emoji/not.png";
-import correct from "../public/emoji/correct.png";
+
+
+import memory from "@/public/images/memory.png";
+import start from "@/public/emoji/start.png";
+import initial from "@/public/emoji/initial.png";
+import not from "@/public/emoji/not.png";
+import correct from "@/public/emoji/correct.png";
 import {useEffect } from 'react';
 
 function MemoryGame() {
   return (
     <>
-    <Navbar/>
+
 
     <div className='bg-gray-900 px-10 md:px-20 lg:px-40'>
            <div>

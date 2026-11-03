@@ -1,0 +1,13 @@
+.header { display: flex; align-items: center; justify-content: space-between; height: 80px; padding: 0 2rem; }
+.nav, .nav > div { display: flex; align-items: center; z-index: 2; }
+.nav a { margin: 0 1rem; color: #eee; text-decoration: none; }
+.nav a:hover { color: #030008; }
+.button { display: none; padding: 5px; cursor: pointer; background: transparent; border: none; color: #eee; font-size: 1.8rem; }
+@media (max-width: 1024px) {
+  .button { display: block; }
+  .nav { position: fixed; inset: 0; height: 100dvh; flex-direction: column; justify-content: center; background: linear-gradient(to right, rgb(6, 182, 212), rgb(139, 92, 246)); transform: translateY(-100%); visibility: hidden; transition: transform 0.3s ease, visibility 0.3s; z-index: 1000; }
+  .nav.open { transform: translateY(0); visibility: visible; }
+  .nav > div { flex-direction: column; gap: 2rem; text-align: center; }
+  .nav a { font-size: 1.5rem; }
+  .close { position: absolute; top: 2rem; right: 2rem; }
+}

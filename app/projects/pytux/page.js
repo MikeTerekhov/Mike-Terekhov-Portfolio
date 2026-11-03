@@ -1,37 +1,34 @@
 "use client"; // This is a client component 👈🏽
 
-import Head from 'next/head';
 import Image from 'next/image';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai';
-import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
+import design from "@/public/images/design.png";
+import code from "@/public/images/code.png";
+import consulting from "@/public/images/consulting.png";
 import { useState } from "react";
-import Navbar from '@/app/Navbar';
-import '@/app/workPage.css';
-import '../app/globals.css';
-import kart from "../public/racekart.png";
-import paper from "../public/paper.jpg";
-import kart2 from "../public/racekart2.png";
-import goose from "../public/goose.png";
-import nn_test from "../public/nn_test.png";
-import overfit from "../public/overfit.png";
-import dataset from "../public/dataset.png";
-import graph from "../public/graph.png";
-import Qres from "../public/Qresult.png";
-import Qtracks from "../public/Qtracks.png";
-import linresults from "../public/linresult.png";
-import lintracks from "../public/lintracks.png";
-import doubleQalg from "../public/doubleQalg.png";
-import eqns from "../public/eqns.png";
+
+
+import kart from "@/public/images/racekart.png";
+import paper from "@/public/images/paper.jpg";
+import kart2 from "@/public/images/racekart2.png";
+import goose from "@/public/images/goose.png";
+import nn_test from "@/public/images/nn_test.png";
+import overfit from "@/public/images/overfit.png";
+import dataset from "@/public/images/dataset.png";
+import graph from "@/public/images/graph.png";
+import Qres from "@/public/images/Qresult.png";
+import Qtracks from "@/public/images/Qtracks.png";
+import linresults from "@/public/images/linresult.png";
+import lintracks from "@/public/images/lintracks.png";
+import doubleQalg from "@/public/images/doubleQalg.png";
+import eqns from "@/public/images/eqns.png";
 import {useEffect } from 'react';
 
 function Pytux() {
   return (
     <>
-    <Navbar/>
+
 
     <div className='bg-gray-900 px-10 md:px-20 lg:px-40'>
            <div>

@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mike Terekhov Portfolio
 
+Next.js portfolio using the App Router, React, and Tailwind CSS. Requires Node.js 22.
 
+## Development
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Run `npm run build` to validate the production build and `npm start` to serve it.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Organization
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `app/`: route pages, the shared root layout, and global styles.
+- `app/projects/<slug>/page.js`: individual project details.
+- `components/`: shared UI, including the navbar with scoped CSS and project cards.
+- `data/projects.js`: project card content and image references.
+- `public/images/`, `public/videos/`, `public/fonts/`: static assets grouped by type.
+- `public/emoji/`: memory game images.
 
-## Learn More
+The root layout renders the navbar once for every route. Keep route-specific UI beside its page and move reusable UI into `components/`.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Legacy page URLs redirect to their current routes in `next.config.js`. Rewrites preserve the original static asset URLs after asset organization. Existing environment configuration belongs in `.env.local` and should not be committed.

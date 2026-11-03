@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from '../Navbar';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaTerminal, FaHome, FaProjectDiagram, FaBriefcase, FaPills, FaBrain, FaQuestionCircle } from 'react-icons/fa';
@@ -137,7 +136,7 @@ Type 'help' for available commands.`;
     if (e.key === 'Enter') {
       const cmd = command.trim().toLowerCase();
       const newHistory = [...history, { type: 'input', content: `$ ${command}` }];
-      
+
       if (cmd === '') {
         setHistory(newHistory);
         setCommand('');
@@ -150,7 +149,7 @@ Type 'help' for available commands.`;
       } else {
         setHistory([...newHistory, { type: 'error', content: `Command not found: ${cmd}. Type 'help' for available commands.` }]);
       }
-      
+
       setCommand('');
     }
   };
@@ -158,7 +157,7 @@ Type 'help' for available commands.`;
   if (isLoading) {
     return (
       <>
-        <Navbar />
+
         <div className={darkMode ? "dark" : ""}>
           <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen flex items-center justify-center'>
             <div className="text-4xl font-['0xProtoNerdFont'] dark:text-white">Loading Terminal...</div>
@@ -170,7 +169,7 @@ Type 'help' for available commands.`;
 
   return (
     <>
-      <Navbar />
+
       <div className={darkMode ? "dark" : ""}>
         <main className='bg-black px-6 md:px-10 lg:px-20 min-h-screen'>
           {/* Terminal Header */}
@@ -280,4 +279,4 @@ Type 'help' for available commands.`;
       </div>
     </>
   );
-} 
+}

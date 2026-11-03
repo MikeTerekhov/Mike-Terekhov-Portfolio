@@ -1,50 +1,42 @@
 "use client"; // This is a client component 👈🏽
 
-import Head from 'next/head'
 import Image from 'next/image'
 import {BsFillMoonStarsFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin} from 'react-icons/ai';
 import { FaGithub, FaInstagram, FaStrava } from "react-icons/fa";
-import deved from "../public/dev-ed-wave.png";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
-import Navbar from './Navbar';
-import pencil_2 from "../public/pencil_2.png"
+import design from "@/public/images/design.png";
+import code from "@/public/images/code.png";
+import consulting from "@/public/images/consulting.png";
+import pencil_2 from "@/public/images/pencil_2.png"
 
-import gears from "../public/gears.png";
-import computer from "../public/computer.png";
-import me from "../public/me.png";
-import pencil from "../public/pencil.png";
+import gears from "@/public/images/gears.png";
+import computer from "@/public/images/computer.png";
+import me from "@/public/images/me.png";
+import pencil from "@/public/images/pencil.png";
 
 // Import images for research projects
-import research1 from "../public/med.jpg";
-import research2 from "../public/eye.avif";
-import db from "../public/db.png";
-import brain_ai from "../public/brain_ai.png";
+import research1 from "@/public/images/med.jpg";
+import research2 from "@/public/images/eye.avif";
+import db from "@/public/images/db.png";
+import brain_ai from "@/public/images/brain_ai.png";
 
-import Link from 'next/link';
-import stocks from "@/public/stocks.png";
-import chess2 from "@/public/chess2.png";
-import kart2 from "@/public/racekart2.png";
-import memory from "@/public/memory.png";
-import goose from "@/public/goose.png";
-import paper from "@/public/paper.jpg";
+import stocks from "@/public/images/stocks.png";
+import chess2 from "@/public/images/chess2.png";
+import memory from "@/public/images/memory.png";
+import goose from "@/public/images/goose.png";
+import paper from "@/public/images/paper.jpg";
 
-import robot from "@/public/robot_cartoon.jpg";
 
 export default function Home() {
   const iconColor = 'white';
   return (
     <>
-      <Navbar/>
+
 
       <div className="dark">
-      <Head>
-        <title>Mike Terekhov</title>
-      </Head>
+
       <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'> 
-        
+
             <nav className='py-10 mb-12 flex justify-between'>
               <h1 className='text-xl font-["0xProtoNerdFont"] text-white'>
                 Mike Terekhov
@@ -79,7 +71,7 @@ export default function Home() {
                 <FaStrava style={{ color: iconColor }} />
               </a>
             </div>
-        
+
           <div>
             <h3 className = "text-3xl py-1 text-white font-['0xProtoNerdFont']">Current Research Projects</h3>
           </div>
@@ -99,7 +91,7 @@ export default function Home() {
                 I am developing an AI-powered clinical decision tool using Retrieval-Augmented Generation (RAG) to optimize Antiretroviral Therapy recommendations for HIV patients globally. My project features a round-table style AI framework where multiple AI agents simulate perspectives of virologists, clinicians, and pharmacists to collaboratively refine treatments. I am implementing agentic workflows with Agents, Planning, and Reasoning Chains to analyze drug-mutation interactions and generate personalized treatment recommendations.
                 </p>
               </div>
-              
+
               <div className='flex-1 text-center shadow-lg p-10 rounded-xl bg-white'>
                 <Image 
                   src={brain_ai} 
@@ -178,7 +170,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 >View Paper</a>
               </div>
-              
+
             </div>
 
             <div className='flex flex-col md:flex-row gap-8 mt-8'>

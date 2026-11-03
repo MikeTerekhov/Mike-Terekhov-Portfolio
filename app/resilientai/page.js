@@ -1,8 +1,6 @@
 "use client";
 
-import Navbar from '../Navbar';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { 
   FaRunning, 
   FaBrain, 
@@ -37,7 +35,7 @@ export default function ResilientAIDashboard() {
   if (isLoading) {
     return (
       <>
-        <Navbar />
+
         <div className="dark">
           <main className='bg-gray-900 px-10 md:px-20 lg:px-40 min-h-screen flex items-center justify-center'>
             <div className="text-4xl font-['0xProtoNerdFont'] text-white">Loading Resilient Running...</div>
@@ -49,7 +47,7 @@ export default function ResilientAIDashboard() {
 
   return (
     <>
-      <Navbar />
+
       <div className="dark">
         <main className='bg-gray-900 px-6 md:px-10 lg:px-20 min-h-screen'>
           {/* Hero Section */}
@@ -212,7 +210,7 @@ export default function ResilientAIDashboard() {
             <div className='relative'>
               {/* Connection Lines */}
               <div className='absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-green-400 transform -translate-y-1/2 z-0'></div>
-              
+
               {/* Journey Nodes */}
               <div className='relative z-10 grid grid-cols-1 md:grid-cols-6 gap-4 items-center'>
                 {/* Junior Year XC */}
@@ -467,4 +465,4 @@ export default function ResilientAIDashboard() {
       </div>
     </>
   );
-} 
+}
