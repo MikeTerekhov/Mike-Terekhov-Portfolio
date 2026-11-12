@@ -16,10 +16,10 @@ Open http://localhost:3000. Run `npm run build` to validate the production build
 - `app/`: route pages, the shared root layout, and global styles.
 - `app/projects/<slug>/page.js`: individual project details.
 - `components/`: shared UI, including the navbar with scoped CSS and project cards.
-- `data/projects.js`: project card content and image references.
-- `public/images/`, `public/videos/`, `public/fonts/`: static assets grouped by type.
+- `data/projects.js`: project card content.
+- `public/images/` and `public/videos/`: media used by the active project and experience pages.
 - `public/emoji/`: memory game images.
 
 The root layout renders the navbar once for every route. Keep route-specific UI beside its page and move reusable UI into `components/`.
 
-Legacy page URLs redirect to their current routes in `next.config.js`. Rewrites preserve the original static asset URLs after asset organization. Existing environment configuration belongs in `.env.local` and should not be committed.
+Legacy page URLs redirect to their current routes in `next.config.js`. Existing environment configuration belongs in `.env.local` and should not be committed.
