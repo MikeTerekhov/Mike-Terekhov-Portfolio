@@ -1,18 +1,4 @@
-import './globals.css'
-import Navbar from '@/components/Navbar'
-
-export const metadata = {
-  title: 'Mike Terekhov',
-  description: 'Personal portfolio website',
-}
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className="dark">
-      <body className="font-['0xProtoNerdFont'] dark:bg-gray-900 dark:text-white">
-        <Navbar />
-        {children}
-      </body>
-    </html>
-  )
-}
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+export const metadata={title:{default:"Mike Terekhov",template:"%s | Mike Terekhov"},description:"Mike Terekhov — software engineering, machine learning, research, and projects."};
+export default function RootLayout({children}){return <html lang="en"><body><Navbar/>{children}<footer className="site-footer"><span>© {new Date().getFullYear()} Mike Terekhov</span><span>Software · Research · Ideas</span></footer></body></html>}
