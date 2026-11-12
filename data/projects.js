@@ -1,15 +1,1 @@
-import stocks from '@/public/images/stocks.png';
-import chess from '@/public/images/chess2.png';
-import kart from '@/public/images/racekart2.png';
-import paper from '@/public/images/paper.jpg';
-import goose from '@/public/images/goose.png';
-import memory from '@/public/images/memory.png';
-
-export const projects = [
-  { slug: 'trader-ios', title: 'Stock Trader IOS', image: stocks, size: 250 },
-  { slug: 'chess', title: 'Android Chess App', image: chess, size: 150 },
-  { slug: 'pytux', title: 'Self-Driving Kart', image: kart, size: 300 },
-  { slug: 'doc-read', title: 'Smart PDF Analyzer', image: paper, size: 200 },
-  { slug: 'goose-chaser', title: 'Autonomous Goose-Chaser', image: goose, size: 200 },
-  { slug: 'memory-game', title: 'Swift Emoji Memory Card Game', image: memory, size: 200 },
-];
+export const projects=[{slug:"trader-ios",title:"iOS stock trader",description:"Full-stack SwiftUI trading app with live market data, interactive charts, and portfolio management."},{slug:"chess",title:"Android chess",description:"Android chess with rule enforcement, AI opponents, and interactive gameplay."},{slug:"pytux",title:"Self-driving kart",description:"Autonomous kart controllers built with Q-learning and Double Q-learning."},{slug:"doc-read",title:"PDF analyzer",description:"Flask and MongoDB platform for PDF extraction, summarization, and sentiment analysis."},{slug:"goose-chaser",title:"Autonomous goose-chasing drone",description:"Led YOLOv5 object detection for a drone, including a custom 200+ image dataset."},{slug:"memory-game",title:"Swift memory game",description:"SwiftUI memory game featuring MVVM, timed play, and interactive matching."}];

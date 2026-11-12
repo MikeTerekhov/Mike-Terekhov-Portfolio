@@ -1,13 +1,1 @@
-import ProjectCard from '@/components/ProjectCard';
-import { projects } from '@/data/projects';
-
-export default function ProjectsPage() {
-  return (
-    <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen">
-      <h1 className="text-4xl py-10 text-center font-['0xProtoNerdFont'] dark:text-white">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map(project => <ProjectCard key={project.slug} project={project} />)}
-      </div>
-    </main>
-  );
-}
+import Link from "next/link";import ProjectCard from "@/components/ProjectCard";import {projects} from "@/data/projects";export const metadata={title:"Projects"};export default function ProjectsPage(){return <main className="site-shell editorial"><p className="eyebrow">Selected work</p><h1>Projects</h1><p className="intro">Selected work in applied machine learning, systems software, and full-stack engineering.</p><section className="editorial-section"><h2>Research</h2><div className="item-list"><article><h3>AI Regimen</h3><p>Developing a retrieval-augmented, multi-agent clinical decision-support system for HIV treatment research, using LLM-as-a-judge evaluation to assess recommendation quality and hallucinations.</p></article><article><h3>ACL biomechanics</h3><p>Built end-to-end biomechanical ML pipelines using MLPs, LSTMs, and RNNs to extract movement features and investigate ACL injury prediction and rehabilitation.</p></article><article><h3>Text to SQL</h3><p>Fine-tuned DeepSeek-Coder 1.3B with LoRA on 1,000+ natural-language/SQL pairs and integrated RAG, improving SQL validity by 22% and query-result accuracy by 23%.</p></article><article><h3>Vision transformer research</h3><p>Developed a Vision Transformer prototype for segmenting internal voids in composite-material micro-CT scans.</p></article></div></section><section className="editorial-section"><h2>Software and engineering</h2><div className="item-list">{projects.map(project=><ProjectCard key={project.slug} project={project}/>)}</div></section><p><Link href="/">← Home</Link></p></main>}
