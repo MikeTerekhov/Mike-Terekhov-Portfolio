@@ -16,7 +16,7 @@ export default function BooksPage() {
     <main className="site-shell editorial">
       <p className="eyebrow">Reading</p>
       <h1>Books</h1>
-      <p className="intro">A record of what I've read and what I'm reading now.</p>
+      <p className="intro">A record of what I&apos;ve read and what I&apos;m reading now.</p>
 
       <section className="editorial-section">
         <h2>Currently reading</h2>
