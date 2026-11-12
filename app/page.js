@@ -1,196 +1,120 @@
-"use client"; // This is a client component 👈🏽
-
-import Image from 'next/image'
-import {BsFillMoonStarsFill} from 'react-icons/bs';
-import {AiFillTwitterCircle, AiFillLinkedin} from 'react-icons/ai';
-import { FaGithub, FaInstagram, FaStrava } from "react-icons/fa";
-import design from "@/public/images/design.png";
-import code from "@/public/images/code.png";
-import consulting from "@/public/images/consulting.png";
-import pencil_2 from "@/public/images/pencil_2.png"
-
-import gears from "@/public/images/gears.png";
-import computer from "@/public/images/computer.png";
-import me from "@/public/images/me.png";
-import pencil from "@/public/images/pencil.png";
-
-// Import images for research projects
-import research1 from "@/public/images/med.jpg";
-import research2 from "@/public/images/eye.avif";
+import Link from "next/link";
+import Image from "next/image";
+import { FaArrowRight, FaGithub, FaLinkedinIn, FaStrava } from "react-icons/fa";
+import { FiArrowUpRight, FiCode, FiCpu, FiLayers } from "react-icons/fi";
+import med from "@/public/images/med.jpg";
+import brain from "@/public/images/brain_ai.png";
 import db from "@/public/images/db.png";
-import brain_ai from "@/public/images/brain_ai.png";
+import styles from "./home.module.css";
 
-import stocks from "@/public/images/stocks.png";
-import chess2 from "@/public/images/chess2.png";
-import memory from "@/public/images/memory.png";
-import goose from "@/public/images/goose.png";
-import paper from "@/public/images/paper.jpg";
-
+const featured = [
+  {
+    number: "01",
+    category: "AGENTIC AI / HEALTHCARE",
+    title: "AI Regimen",
+    description: "A research-driven, multi-agent RAG system exploring how specialist perspectives and structured reasoning can support HIV treatment recommendations.",
+    image: med,
+    alt: "Medical research illustration",
+    tags: ["RAG", "LLM agents", "Python"],
+    href: "/projects",
+  },
+  {
+    number: "02",
+    category: "MACHINE LEARNING / BIOMECHANICS",
+    title: "ACL Biomechanics",
+    description: "Sequence-based machine learning on clinical sensor data to investigate movement patterns across injured, non-injured, and control groups.",
+    image: brain,
+    alt: "Illustration of an artificial intelligence brain",
+    tags: ["PyTorch", "LSTM", "Clinical data"],
+    href: "/projects",
+  },
+  {
+    number: "03",
+    category: "NLP / DATA SYSTEMS",
+    title: "Text to SQL",
+    description: "Fine-tuned DeepSeek-Coder with LoRA and retrieval augmentation, improving SQL validity by 22% and result accuracy by 23% over baseline.",
+    image: db,
+    alt: "Database illustration",
+    tags: ["LoRA", "RAG", "DeepSeek"],
+    href: "/projects",
+  },
+];
 
 export default function Home() {
-  const iconColor = 'white';
   return (
-    <>
-
-
-      <div className="dark">
-
-      <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'> 
-
-            <nav className='py-10 mb-12 flex justify-between'>
-              <h1 className='text-xl font-["0xProtoNerdFont"] text-white'>
-                Mike Terekhov
-              </h1>
-              <ul className='flex items-center'>
-                <li><a
-                className='bg-gradient-to-r from-cyan-500 to-violet-400 text-white px-4 py-2 rounded-md ml-8 font-["0xProtoNerdFont"]'
-                href="https://drive.google.com/file/d/1PPI6Rgj5Xje7oTGvK7KsKx4EiGUkkxlI/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Resume</a></li>
-              </ul>
-            </nav>
-            <div className='text-center p-10'>
-              <h2 className='text-5xl py-2 text-violet-400 font-medium font-["0xProtoNerdFont"] md:text-6xl'>Mike Terekhov</h2>
-              <h3 className='text-2xl py-2 md:text-3xl text-white font-["0xProtoNerdFont"]'>MS CS @ University of Southern California</h3>
-              <p className='text-md py-5 leading-8 text-white md:text-xl font-["0xProtoNerdFont"]'>
-                Boston University - B.S. Mechanical Engineering with a Concentration in Machine Learning
-              </p>
-              <p className='text-md py-5 leading-8 text-white md:text-xl font-["0xProtoNerdFont"]'>
-              University of Southern California - M.S. Computer Science
-              </p>
+    <main className={styles.home}>
+      <div className={styles.ambient} aria-hidden="true" />
+      <div className={styles.shell}>
+        <section className={styles.hero} aria-labelledby="hero-title">
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}><span className={styles.statusDot} /> SOFTWARE ENGINEER · AI / ML</p>
+            <h1 id="hero-title">Building at the intersection of <span>software</span> and intelligence.</h1>
+            <p className={styles.lede}>I'm Mike Terekhov, a systems software engineer with a background in computer science, machine learning, and mechanical engineering. I build thoughtful software, from low-level systems to intelligent applications.</p>
+            <div className={styles.actions}>
+              <Link className={styles.primaryButton} href="/projects">Explore my work <FaArrowRight aria-hidden="true" /></Link>
+              <a className={styles.secondaryButton} href="https://drive.google.com/file/d/1PPI6Rgj5Xje7oTGvK7KsKx4EiGUkkxlI/view?usp=sharing" target="_blank" rel="noopener noreferrer">View résumé <FiArrowUpRight aria-hidden="true" /></a>
             </div>
-            <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
-              <a href="https://www.linkedin.com/in/miketerekhov/" target="_blank" rel="noopener noreferrer">
-                <AiFillLinkedin style={{ color: iconColor }} />
-              </a>
-              <a href="https://github.com/MikeTerekhov" target="_blank" rel="noopener noreferrer">
-                <FaGithub style={{ color: iconColor }} />
-              </a>
-              <a href="https://www.strava.com/athletes/27456281" target="_blank" rel="noopener noreferrer">
-                <FaStrava style={{ color: iconColor }} />
-              </a>
+            <div className={styles.socials} aria-label="Social profiles">
+              <a href="https://github.com/MikeTerekhov" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/miketerekhov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              <a href="https://www.strava.com/athletes/27456281" target="_blank" rel="noopener noreferrer" aria-label="Strava"><FaStrava /></a>
             </div>
-
-          <div>
-            <h3 className = "text-3xl py-1 text-white font-['0xProtoNerdFont']">Current Research Projects</h3>
           </div>
-          <div className='py-10'>
-            <div className='flex flex-col md:flex-row gap-8 mt-8'>
-              <div className='flex-1 text-center shadow-lg p-10 rounded-xl bg-white'>
-                <Image 
-                  src={research1} 
-                  width={200} 
-                  height={200} 
-                  className='mx-auto mb-6'
-                  alt="Research Project 1"
-                  priority
-                />
-                <h3 className='text-2xl font-medium pt-4 pb-2 font-["0xProtoNerdFont"]'>HIV Research AI Regimen Project</h3>
-                <p className='text-gray-600 text-gray-800 font-["0xProtoNerdFont"]'>
-                I am developing an AI-powered clinical decision tool using Retrieval-Augmented Generation (RAG) to optimize Antiretroviral Therapy recommendations for HIV patients globally. My project features a round-table style AI framework where multiple AI agents simulate perspectives of virologists, clinicians, and pharmacists to collaboratively refine treatments. I am implementing agentic workflows with Agents, Planning, and Reasoning Chains to analyze drug-mutation interactions and generate personalized treatment recommendations.
-                </p>
-              </div>
+          <div className={styles.heroVisual} aria-hidden="true">
+            <div className={styles.orbitOne} />
+            <div className={styles.orbitTwo} />
+            <div className={styles.visualCore}><span>MT</span><small>ENGINEER / BUILDER</small></div>
+            <div className={styles.floatTop}>SYSTEMS <span>↗</span></div>
+            <div className={styles.floatBottom}>AI / ML <span>✳</span></div>
+          </div>
+        </section>
 
-              <div className='flex-1 text-center shadow-lg p-10 rounded-xl bg-white'>
-                <Image 
-                  src={brain_ai} 
-                  width={200} 
-                  height={200} 
-                  className='mx-auto mb-6'
-                  alt="Research Project 1"
-                  priority
-                />
-                <h3 className='text-2xl font-medium pt-4 pb-2 font-["0xProtoNerdFont"]'>ACL Injury Biomechanics AI Project</h3>
-                <div className='text-gray-600 text-gray-800 font-["0xProtoNerdFont"] space-y-4'>
-                <p className = 'padding-40'>
-                Using multimodal biomechanical sensor data collected across multiple clinical time points, you trained an LSTM-based classifier to distinguish between three groups: Control, Non-Injured, and Injured athletes in the context of ACL injury.
-                </p>
-                <p>
-                The goal of this project was to specifically see if we can identify between movement patterns of fully healthy legs versus the non-injured leg of athletes who have experienced an ACL injury. Using this knowledge, the model aims to detect subtle biomechanical differences that may indicate compensatory movement strategies or lingering deficits in the non-injured leg that could predispose athletes to future injury. With this data, we can help injured patients better understand their movement patterns and potentially guide rehabilitation strategies to reduce the risk of re-injury.
-                </p>
-                <p>
-                The model processes full temporal sequences of normalized features, learning patterns across time to classify each subject. Experimenting with varying numbers of training epochs and roughly 54,000 parameters, the model showed strongest performance on the Control class, while Non-Injured and Injured subjects proved harder to separate, a clinically meaningful challenge given how similar their movement patterns can be post-injury. Results were further broken down by clinical time point and sex to assess where the model generalizes well and where it struggles.
-                </p>
+        <section className={styles.section} aria-labelledby="work-title">
+          <div className={styles.sectionHeading}>
+            <div><p className={styles.kicker}>01 / SELECTED WORK</p><h2 id="work-title">Things I've been building<span className={styles.period}>.</span></h2></div>
+            <Link className={styles.textLink} href="/projects">All projects <FiArrowUpRight aria-hidden="true" /></Link>
+          </div>
+          <div className={styles.projectGrid}>
+            {featured.map((project) => (
+              <article className={styles.projectCard} key={project.number}>
+                <div className={styles.projectImage}>
+                  <Image src={project.image} alt={project.alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" className={styles.image} />
+                  <span className={styles.projectNumber}>{project.number}</span>
                 </div>
-                <a
-                className='inline-block mt-4 px-6 py-2 bg-gradient-to-r from-cyan-500 to-violet-400 text-white rounded-md ml-8 font-["0xProtoNerdFont"]'
-                href="https://drive.google.com/file/d/1AR15rWVOSsmMFi4_51sSqp8PdXaIJw0l/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                >View Most Recent Presentation</a>
-              </div>
-
-            </div>
+                <div className={styles.projectBody}>
+                  <p className={styles.projectCategory}>{project.category}</p>
+                  <h3>{project.title}</h3>
+                  <p className={styles.projectDescription}>{project.description}</p>
+                  <div className={styles.tags}>{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <Link href={project.href} className={styles.projectLink}>Explore projects <FiArrowUpRight aria-hidden="true" /></Link>
+                </div>
+              </article>
+            ))}
           </div>
+        </section>
 
-          <div>           
-            <h3 className = "text-3xl py-1 text-white font-['0xProtoNerdFont']">Previous Research Projects</h3>
+        <section className={styles.aboutSection} aria-labelledby="about-title">
+          <div className={styles.aboutIntro}>
+            <p className={styles.kicker}>02 / ABOUT ME</p>
+            <h2 id="about-title">Curious by nature.<br /><span>Engineer by training.</span></h2>
+            <p>I enjoy solving problems across disciplines, connecting rigorous engineering with practical, human-centered technology.</p>
+            <Link href="/work" className={styles.textLink}>More about my experience <FiArrowUpRight aria-hidden="true" /></Link>
           </div>
-          <div className='flex flex-col md:flex-row gap-8 mt-8'>
-              <div className='flex-1 text-center shadow-lg p-10 rounded-xl bg-white'>
-                <Image 
-                  src={pencil_2} 
-                  width={50} 
-                  height={50} 
-                  className='mx-auto mb-6'
-                  alt="Research Project 1"
-                  priority
-                />
-                <h3 className='text-2xl font-medium pt-4 pb-2 font-["0xProtoNerdFont"]'>AI vs Human Text Classifier</h3>
-                <p className='text-gray-600 text-gray-800 font-["0xProtoNerdFont"]'>
-                In this project, my team and I set out to explore whether machine learning models could effectively distinguish between human-written and AI-generated high school essays. We gathered a diverse dataset that included original human essays, AI-generated essays using models like GPT-4, GPT-2, Mistral, and Gemma, as well as both AI- and human-paraphrased texts. We applied classical text analysis methods such as Bag of Words, TF-IDF, and SVMs, alongside a neural network using GloVe embeddings. While traditional methods performed well on standard AI text, we found that they struggled with identifying AI-paraphrased versions of human essays. However, our GloVe-based model showed strong performance even in these more nuanced cases. Through this work, we demonstrated both the potential and the challenges in detecting AI-generated content, particularly as language models become more adept at mimicking human writing.
-                </p>
-              <a
-                className='inline-block mt-4 px-6 py-2 bg-gradient-to-r from-cyan-500 to-violet-400 text-white rounded-md ml-8 font-["0xProtoNerdFont"]'
-                href="https://drive.google.com/file/d/14LZD5HWmaSDkxoTXJlk9Q7aZp51L5ofT/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                >View Paper</a>
-              </div>
-            </div>
-          <div className='flex flex-col md:flex-row gap-8 mt-8'>
-              <div className='flex-1 text-center shadow-lg p-10 rounded-xl bg-white'>
-                <Image 
-                  src={db} 
-                  width={200} 
-                  height={200} 
-                  className='mx-auto mb-6'
-                  alt="Research Project 1"
-                  priority
-                />
-                <h3 className='text-2xl font-medium pt-4 pb-2 font-["0xProtoNerdFont"]'>LLM Text to SQL Model</h3>
-                <p className='text-gray-600 text-gray-800 font-["0xProtoNerdFont"]'>
-                For this project, we developed a text-to-SQL system by fine-tuning the DeepSeek-Coder 1.3B model using Low-Rank Adaptation (LoRA) on a curated dataset of 1000+ natural language and SQL query pairs from an NBA database. We integrated a Retrieval-Augmented Generation (RAG) module to dynamically improve prompts based on schema similarity, which helped optimize model performance. Through fine-tuning and data augmentation strategies, we increased SQL validity by 22% and result correctness by 23% over the baseline. I also built a custom evaluation framework to track SQL validity, result accuracy, and query matching across experiments.
-                </p>
-              <a
-                className='inline-block mt-4 px-6 py-2 bg-gradient-to-r from-cyan-500 to-violet-400 text-white rounded-md ml-8 font-["0xProtoNerdFont"]'
-                href="https://drive.google.com/file/d/1WPwQyYXss8MZE6a_H0Cv_1-NQ6HgR1wJ/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                >View Paper</a>
-              </div>
-
-            </div>
-
-            <div className='flex flex-col md:flex-row gap-8 mt-8'>
-              <div className='flex-1 text-center shadow-lg p-10 rounded-xl bg-white'>
-                <Image 
-                  src={research2} 
-                  width={200} 
-                  height={200} 
-                  className='mx-auto mb-6'
-                  alt="Research Project 2"
-                  priority
-                />
-                <h3 className='text-2xl font-medium pt-4 pb-2 font-["0xProtoNerdFont"]'>Vision Transformer Research</h3>
-                <p className='text-gray-600 text-gray-800 font-["0xProtoNerdFont"]'>
-                I am exploring methods to detect voids in Composite Oriented Strand Boards using machine learning, aiming for up to 95% accuracy. I formulated and implemented a Vision Transformer architecture with an encoder and 8 attention heads to explore advanced image representation techniques. My approach includes a preprocessing pipeline that segments 128×128 images into 16×16 patches for the Vision Transformer, enabling efficient processing of micro-CT scan data for void detection.
-                </p>
-              </div>
+          <div className={styles.timeline}>
+            <div className={styles.timelineItem}><span className={styles.timelineIcon}><FiCpu /></span><div><small>2025 — PRESENT</small><h3>Systems Software Engineer</h3><p>Raytheon · Systems, software, and hardware integration</p></div></div>
+            <div className={styles.timelineItem}><span className={styles.timelineIcon}><FiLayers /></span><div><small>2023 — 2025</small><h3>M.S. Computer Science</h3><p>University of Southern California</p></div></div>
+            <div className={styles.timelineItem}><span className={styles.timelineIcon}><FiCode /></span><div><small>2019 — 2023</small><h3>B.S. Mechanical Engineering</h3><p>Boston University · Machine Learning concentration</p></div></div>
           </div>
-      </main>
-    </div>
-    </>
-  )
+        </section>
+
+        <section className={styles.cta} aria-labelledby="cta-title">
+          <p className={styles.kicker}>03 / CONNECT</p>
+          <h2 id="cta-title">Have something interesting in mind?</h2>
+          <p>I'm always interested in thoughtful engineering problems, research, and new ideas.</p>
+          <a href="https://www.linkedin.com/in/miketerekhov/" target="_blank" rel="noopener noreferrer" className={styles.primaryButton}>Let's connect <FiArrowUpRight aria-hidden="true" /></a>
+        </section>
+        <footer className={styles.footer}><span>© {new Date().getFullYear()} Mike Terekhov</span><span>Built with Next.js · Driven by curiosity</span></footer>
+      </div>
+    </main>
+  );
 }
