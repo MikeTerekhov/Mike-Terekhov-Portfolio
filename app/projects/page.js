@@ -1,13 +1,1 @@
-import ProjectCard from '@/components/ProjectCard';
-import { projects } from '@/data/projects';
-
-export default function ProjectsPage() {
-  return (
-    <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 min-h-screen">
-      <h1 className="text-4xl py-10 text-center font-['0xProtoNerdFont'] dark:text-white">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map(project => <ProjectCard key={project.slug} project={project} />)}
-      </div>
-    </main>
-  );
-}
+import Link from "next/link";import ProjectCard from "@/components/ProjectCard";import {projects} from "@/data/projects";export const metadata={title:"Projects"};export default function ProjectsPage(){return <main className="site-shell editorial"><p className="eyebrow">Selected work</p><h1>Projects</h1><p className="intro">A selection of software, machine learning, and engineering projects, from experimental research to applications.</p><section className="editorial-section"><h2>Research</h2><div className="item-list"><article><h3>AI Regimen</h3><p>Multi-agent retrieval-augmented reasoning for HIV antiretroviral treatment research and decision support.</p></article><article><h3>ACL biomechanics</h3><p>Longitudinal biomechanical sensor data and sequence models for investigating movement patterns following ACL injury.</p></article><article><h3>Text to SQL</h3><p>DeepSeek-Coder fine-tuning with LoRA and RAG. Experiments improved SQL validity by 22% and result accuracy by 23% relative to baseline.</p></article><article><h3>Vision transformer research</h3><p>Computer vision experiments for detecting voids in composite material micro-CT scans.</p></article></div></section><section className="editorial-section"><h2>Software and engineering</h2><div className="item-list">{projects.map(project=><ProjectCard key={project.slug} project={project}/>)}</div></section><p><Link href="/">← Home</Link></p></main>}
