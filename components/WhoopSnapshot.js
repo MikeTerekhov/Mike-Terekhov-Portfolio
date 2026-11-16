@@ -13,6 +13,5 @@ export default async function WhoopSnapshot() {
     <div className="whoop-metrics">{metrics.map(metric => <div key={metric.label} className="whoop-metric">
       <span>{metric.label}</span><strong>{metric.value}</strong>
     </div>)}</div>
-    <p className="whoop-footnote">Read-only WHOOP data. Scores update as new data becomes available.</p>
   </section>;
 }
