@@ -35,7 +35,7 @@
   .site-header{display:flex;align-items:center;justify-content:space-between;padding:25px 23px 18px;position:relative;z-index:100}
   .site-brand{margin-bottom:0;position:relative;z-index:102}
   .desktop-site-nav{display:none}
-  .mobile-menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:8px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;position:relative;z-index:102}
+  .mobile-menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:8px;border:1px solid var(--rule);border-radius:10px;background:transparent;color:var(--ink);cursor:pointer;position:relative;z-index:102}
   .mobile-menu-toggle span{display:block;width:22px;height:1.5px;background:currentColor;transition:transform .25s ease,opacity .2s ease}
   .mobile-menu-toggle.is-open span:first-child{transform:translateY(6.5px) rotate(45deg)}
   .mobile-menu-toggle.is-open span:nth-child(2){opacity:0}
