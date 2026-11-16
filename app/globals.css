@@ -28,3 +28,24 @@
 .whoop-ring-value small{font-size:.5em;vertical-align:baseline;margin-left:2px;color:var(--muted)}
 .whoop-ring-label{font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px;letter-spacing:.02em;color:var(--muted);text-align:center}
 @media(max-width:600px){.whoop-rings{gap:10px}.whoop-ring-metric{gap:9px}.whoop-ring circle{stroke-width:9}.whoop-ring-value{font-size:clamp(17px,5vw,25px)}.whoop-ring-label{font-size:10px}}
+
+/* Full-screen mobile navigation */
+.mobile-menu-toggle,.mobile-site-nav{display:none}
+@media(max-width:680px){
+  .site-header{display:flex;align-items:center;justify-content:space-between;padding:25px 23px 18px;position:relative;z-index:100}
+  .site-brand{margin-bottom:0;position:relative;z-index:102}
+  .desktop-site-nav{display:none}
+  .mobile-menu-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:8px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;position:relative;z-index:102}
+  .mobile-menu-toggle span{display:block;width:22px;height:1.5px;background:currentColor;transition:transform .25s ease,opacity .2s ease}
+  .mobile-menu-toggle.is-open span:first-child{transform:translateY(6.5px) rotate(45deg)}
+  .mobile-menu-toggle.is-open span:nth-child(2){opacity:0}
+  .mobile-menu-toggle.is-open span:last-child{transform:translateY(-6.5px) rotate(-45deg)}
+  .mobile-site-nav{display:flex;position:fixed;inset:0;z-index:101;background:var(--paper);padding:120px 28px 50px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .25s ease,transform .25s ease,visibility .25s ease}
+  .mobile-site-nav.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+  .mobile-site-nav-inner{width:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:stretch}
+  .mobile-site-nav-inner .eyebrow{margin-bottom:28px!important}
+  .mobile-site-nav-inner>a{display:flex;align-items:baseline;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule);font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(25px,7vw,38px);text-decoration:none;line-height:1.35}
+  .mobile-site-nav-inner>a[aria-current="page"]{color:var(--accent)}
+  .mobile-nav-index{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)}
+}
+@media(prefers-reduced-motion:reduce){.mobile-site-nav,.mobile-menu-toggle span{transition:none}}
