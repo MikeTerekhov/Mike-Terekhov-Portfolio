@@ -1,6 +1,8 @@
 export const metadata = { title: "Books" };
 
 const read = [
+  { title: "Kubernetes: Up and Running", author: "Kelsey Hightower, Brendan Burns, Joe Beda" },
+  { title: "Learning Git", author: "Anna Skoulikari" },
   { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky" },
   { title: "The Idiot", author: "Fyodor Dostoevsky" },
   { title: "Crime and Punishment", author: "Fyodor Dostoevsky" },
