@@ -11,7 +11,12 @@ const russianClassics = [
   { title: "Anna Karenina", author: "Leo Tolstoy" },
 ];
 
+const contemporaryFiction = [
+  { title: "Devil House", author: "John Darnielle" },
+];
+
 const technicalBooks = [
+  { title: "The Recursive Book of Recursion", author: "Al Sweigart" },
   { title: "Kubernetes: Up and Running", author: "Kelsey Hightower, Brendan Burns, Joe Beda" },
   { title: "Learning Git", author: "Anna Skoulikari" },
 ];
@@ -53,6 +58,16 @@ export default function BooksPage() {
         <p className="books-section-intro">Novels and stories exploring human nature, morality, and the inner life.</p>
         <div className="item-list">
           {russianClassics.map((book) => <BookEntry key={book.title} {...book} tag="Read in Russian" />)}
+        </div>
+      </section>
+
+      <section className="editorial-section">
+        <div className="books-section-heading">
+          <div><p className="eyebrow">Fiction</p><h2>Contemporary fiction</h2></div>
+          <span className="books-count">{String(contemporaryFiction.length).padStart(2, "0")} book</span>
+        </div>
+        <div className="item-list">
+          {contemporaryFiction.map((book) => <BookEntry key={book.title} {...book} tag="Read" />)}
         </div>
       </section>
 
