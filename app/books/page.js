@@ -15,6 +15,13 @@ const contemporaryFiction = [
   { title: "Devil House", author: "John Darnielle" },
 ];
 
+const nonfictionBooks = [
+  { title: "Outliers: The Story of Success", author: "Malcolm Gladwell" },
+  { title: "The Power of Now: A Guide to Spiritual Enlightenment", author: "Eckhart Tolle" },
+  { title: "Digital Minimalism: Choosing a Focused Life in a Noisy World", author: "Cal Newport" },
+  { title: "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness", author: "Morgan Housel" },
+];
+
 const technicalBooks = [
   { title: "The Recursive Book of Recursion", author: "Al Sweigart" },
   { title: "Kubernetes: Up and Running", author: "Kelsey Hightower, Brendan Burns, Joe Beda" },
@@ -68,6 +75,17 @@ export default function BooksPage() {
         </div>
         <div className="item-list">
           {contemporaryFiction.map((book) => <BookEntry key={book.title} {...book} tag="Read" />)}
+        </div>
+      </section>
+
+      <section className="editorial-section">
+        <div className="books-section-heading">
+          <div><p className="eyebrow">Ideas &amp; perspective</p><h2>Nonfiction</h2></div>
+          <span className="books-count">{String(nonfictionBooks.length).padStart(2, "0")} books</span>
+        </div>
+        <p className="books-section-intro">Perspectives on psychology, attention, success, and personal growth.</p>
+        <div className="item-list">
+          {nonfictionBooks.map((book) => <BookEntry key={book.title} {...book} tag="Read" />)}
         </div>
       </section>
 
