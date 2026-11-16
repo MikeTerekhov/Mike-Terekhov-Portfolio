@@ -11,6 +11,16 @@ const russianClassics = [
   { title: "Anna Karenina", author: "Leo Tolstoy" },
 ];
 
+const harryPotterBooks = [
+  "Harry Potter and the Philosopher's Stone",
+  "Harry Potter and the Chamber of Secrets",
+  "Harry Potter and the Prisoner of Azkaban",
+  "Harry Potter and the Goblet of Fire",
+  "Harry Potter and the Order of the Phoenix",
+  "Harry Potter and the Half-Blood Prince",
+  "Harry Potter and the Deathly Hallows",
+].map((title) => ({ title, author: "J. K. Rowling" }));
+
 const contemporaryFiction = [
   { title: "Devil House", author: "John Darnielle" },
 ];
@@ -65,6 +75,19 @@ export default function BooksPage() {
         <p className="books-section-intro">Novels and stories exploring human nature, morality, and the inner life.</p>
         <div className="item-list">
           {russianClassics.map((book) => <BookEntry key={book.title} {...book} tag="Read in Russian" />)}
+        </div>
+      </section>
+
+      <section className="editorial-section">
+        <div className="books-section-heading">
+          <div><p className="eyebrow">Fantasy / Series</p><h2>Harry Potter</h2></div>
+          <span className="books-count">07 books</span>
+        </div>
+        <p className="books-section-intro">The complete seven-book series, read in both Russian and English.</p>
+        <div className="item-list">
+          {harryPotterBooks.map((book) => (
+            <BookEntry key={book.title} {...book} tag="Russian & English" />
+          ))}
         </div>
       </section>
 
