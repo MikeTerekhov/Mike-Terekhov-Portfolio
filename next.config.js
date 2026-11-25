@@ -330,6 +330,11 @@ const nextConfig = {
         "permanent": true
     },
     {
+        "source": "/pytux-lab.html",
+        "destination": "/projects/pytux/lab",
+        "permanent": true
+    },
+    {
         "source": "/DocRead",
         "destination": "/projects/doc-read",
         "permanent": true
