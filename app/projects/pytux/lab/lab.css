@@ -1,0 +1,78 @@
+/* Kart Q-learning lab. Uses the site tokens from app/globals.css
+   (--paper, --ink, --muted, --rule, --accent) plus two of the WHOOP ring
+   tones: tan #d6a77f for the kart and current action, blue #9eaccd for ε. */
+.kart-lab{--kl-tan:#d6a77f;--kl-blue:#9eaccd;--kl-sans:'DM Sans',ui-sans-serif,system-ui,sans-serif;margin-top:36px}
+.kart-lab *{box-sizing:border-box;min-width:0}
+.kart-lab h3{font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:19px;line-height:1.4;letter-spacing:-.025em;margin:0 0 6px}
+.kl-hint{font-family:var(--kl-sans);font-size:13px;line-height:1.6;color:var(--muted);margin:0 0 14px!important;max-width:620px}
+.kl-accent{color:var(--accent)}
+.kl-tan{color:var(--kl-tan)}
+
+.kl-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-bottom:34px}
+.kl-metric{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--rule);padding-top:15px}
+.kl-metric span{font-family:var(--kl-sans);font-size:12px;color:var(--muted)}
+.kl-metric strong{font-weight:400;font-size:clamp(24px,3.4vw,36px);line-height:1.3;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.kl-main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:44px}
+.kl-side{display:flex;flex-direction:column;gap:34px}
+.kl-side section{border-top:1px solid var(--rule);padding-top:18px}
+
+.kl-track{position:relative;aspect-ratio:1000/630;border:1px solid var(--rule);background:#181a15}
+.kl-track canvas{position:absolute;inset:0;width:100%;height:100%}
+.kl-flag{position:absolute;left:10px;top:8px;font-family:var(--kl-sans);font-size:12px;color:var(--ink);background:rgba(20,21,18,.82);padding:3px 9px}
+
+.kl-controls{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:flex-end;margin-top:18px}
+.kl-ctl{display:flex;flex-direction:column;gap:5px}
+.kl-ctl>span{font-family:var(--kl-sans);font-size:12px;color:var(--muted)}
+.kl-btn,.kl-seg button,.kart-lab select{font-family:var(--kl-sans);font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--rule);height:40px;padding:0 14px;cursor:pointer;border-radius:0}
+.kl-btn:hover,.kl-seg button:hover,.kart-lab select:hover{border-color:var(--muted)}
+.kl-primary{border-color:var(--ink);min-width:84px}
+.kl-primary:hover{color:var(--accent);border-color:var(--accent)}
+.kl-seg{display:inline-flex}
+.kl-seg button{color:var(--muted)}
+.kl-seg button+button{border-left:0}
+.kl-seg button[aria-pressed=true]{color:var(--ink);background:#20221d;box-shadow:inset 0 -2px 0 var(--accent)}
+.kl-seg-sm button{height:32px;padding:0 10px;font-size:12px}
+.kart-lab select{padding:0 10px}
+.kart-lab select option{background:var(--paper);color:var(--ink)}
+.kart-lab button:focus-visible,.kart-lab select:focus-visible,.kart-lab input:focus-visible{outline:1px solid var(--accent);outline-offset:2px}
+
+.kl-sliders{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 22px;margin-top:22px;padding-top:16px;border-top:1px solid var(--rule)}
+.kl-sliders label{display:flex;justify-content:space-between;gap:8px;font-family:var(--kl-sans);font-size:12px;color:var(--muted);line-height:1.4;min-height:34px}
+.kl-sliders output{color:var(--ink);font-variant-numeric:tabular-nums}
+.kl-sliders input[type=range]{width:100%;accent-color:var(--accent);height:24px}
+
+.kl-chart{margin-top:30px;border-top:1px solid var(--rule);padding-top:18px}
+.kl-fig{position:relative;height:230px}
+.kl-fig svg{position:absolute;inset:0;width:100%;height:100%}
+.kl-fig svg text{font:12px 'DM Sans',ui-sans-serif,system-ui,sans-serif;fill:var(--muted);paint-order:stroke;stroke:var(--paper);stroke-width:4px}
+
+.kl-aimstrip{position:relative;height:44px;display:flex;border:1px solid var(--rule)}
+.kl-aimstrip div{display:flex;align-items:flex-end;justify-content:center;font-family:var(--kl-sans);font-size:12px;color:var(--muted);padding-bottom:4px;border-right:1px solid var(--rule);transition:background .12s}
+.kl-aimstrip div:last-of-type{border-right:0}
+.kl-aimstrip div.kl-on{background:#2a2e25;color:var(--ink)}
+#klAimMark{position:absolute;top:4px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:10px solid var(--kl-tan);transform:translateX(-6px)}
+.kl-readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.kl-readout span{display:block;font-family:var(--kl-sans);font-size:12px;color:var(--muted)}
+.kl-readout b{display:block;font-weight:400;font-size:22px;line-height:1.35;letter-spacing:-.02em;white-space:nowrap}
+.kl-readout small{display:block;font-family:var(--kl-sans);font-size:12px;line-height:1.45;color:var(--muted)}
+
+.kl-qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.kl-qhead h3{margin:0}
+.kl-qgrid{display:grid;grid-template-columns:42px repeat(10,minmax(0,1fr));gap:2px}
+.kl-ch{font-family:var(--kl-sans);font-size:11px;color:var(--muted);text-align:center;writing-mode:vertical-rl;transform:rotate(180deg);height:44px;line-height:1}
+.kl-rh{font-family:var(--kl-sans);font-size:11px;line-height:18px;color:var(--muted);padding-right:5px;text-align:right}
+.kl-rh.kl-on{color:var(--kl-tan)}
+.kl-c{height:18px;background:#1f211c;position:relative;cursor:crosshair}
+.kl-c.kl-best::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--paper)}
+.kl-c.kl-cur{box-shadow:0 0 0 1.5px var(--kl-tan)}
+.kl-gap{grid-column:1/-1;height:6px}
+.kl-qfoot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px;font-family:var(--kl-sans);font-size:12px;color:var(--muted)}
+.kl-ramp{display:inline-block;width:70px;height:6px;background:linear-gradient(90deg,#1f211c,var(--accent));vertical-align:middle;margin:0 6px}
+
+.kl-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+.kl-notes p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
+.kl-notes code{font-size:12px;color:var(--ink);overflow-wrap:anywhere}
+
+@media(max-width:900px){.kl-main{grid-template-columns:minmax(0,1fr)}.kl-sliders{grid-template-columns:repeat(2,minmax(0,1fr))}.kl-notes{grid-template-columns:minmax(0,1fr);gap:24px}}
+@media(max-width:560px){.kl-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.kl-qgrid{grid-template-columns:36px repeat(10,minmax(0,1fr))}.kl-readout b{font-size:19px}}
